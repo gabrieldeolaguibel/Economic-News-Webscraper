@@ -1,0 +1,10 @@
+jupyterlab
+nbclient
+pandas
+lxml
+html5lib
+datetime
+cloudscraper
+bs4
+requests
+python-dotenv
