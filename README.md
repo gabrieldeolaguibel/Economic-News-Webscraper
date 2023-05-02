@@ -24,7 +24,6 @@ The project utilizes a Python script that scrapes news websites, and a GitHub Ac
 <p align="center">
   <img src="https://www.linkpicture.com/q/WhatsApp-Image-2023-05-03-at-12.15.41-AM.jpeg" alt="Screenshot 1" width="300" height="400" style="margin: 0 10px;">
   <img src="https://www.linkpicture.com/q/WhatsApp-Image-2023-05-03-at-12.15.21-AM.jpeg" alt="Screenshot 2" width="300" height="400" style="margin: 0 10px;">
-  <img src="https://www.linkpicture.com/q/WhatsApp-Image-2023-05-03-at-12.14.05-AM.jpeg" alt="Screenshot 3" width="300" height="400" style="margin: 0 10px;">
 </p>
 
 
