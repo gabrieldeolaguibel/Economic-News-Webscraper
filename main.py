@@ -1,10 +1,12 @@
 import calendar
 import pandas as pd
 from datetime import datetime, timezone, timedelta
-from message_data import message_data_array
 from scraper import create_scraper, fetch_calendar_page, send_post_request, parse_calendar_data
 from filter_data import clean_df, merge_dfs, drop_tentative, apply_timezones, add_datetime, filter_past_events, clean_date
 import requests
+from dotenv import load_dotenv
+import os
+
 
 def get_current_year_month_day():
     # Get current year, month, day
@@ -120,7 +122,8 @@ def process_data_rows(df, webhook_url):
 
 if __name__ == "__main__":
     # Usage
-    webhook_url = 'YOUR_WEBHOOK_URL'
+    webhook_url = os.getenv('WEBHOOK_URL')
+    load_dotenv()
     final_df = scrape_economic_data()
     process_data_rows(final_df, webhook_url)
     print(final_df)
