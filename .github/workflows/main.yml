@@ -31,10 +31,10 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
 
-      - id: jupyter 
-        name: Jupyter Notebook Execution
-        run: jupyter execute download.ipynb
-        shell: bash 
+      - id: python_script
+        name: Python Script Execution
+        run: python main.py
+        shell: bash
 
  # Add new files in folder, commit along with other modified files, push
       - id: commit
