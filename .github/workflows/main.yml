@@ -35,18 +35,18 @@ jobs:
 
       - id: python_script
         name: Python Script Execution
-        run: |
-          python main.py
-          cat message_history.txt
+        run: python main.py
         shell: bash
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
-      - name: Commit and push changes
+# Add new files in folder, commit along with other modified files, push
+      - id: commit
+        name: Commit files
         run: |
           git config --local user.name actions-user
           git config --local user.email "actions@github.com"
-          git add --all
-          git commit -m "GH ACTION Headlines $(date)"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "GH ACTION Headlines $(date)"
           git remote set-url origin "https://x-access-token:${{ secrets.ACTIONS_PUSH_TOKEN }}@github.com/${{ github.repository }}"
           git push origin main
