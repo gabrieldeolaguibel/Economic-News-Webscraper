@@ -38,7 +38,8 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
- # Add new files in folder, commit along with other modified files, push
+
+# Add new files in folder, commit along with other modified files, push
       - id: commit
         name: Commit files
         run:
@@ -46,7 +47,7 @@ jobs:
 
           git config --local user.email "actions@github.com"
 
-          git add *
+          git add .
 
           git commit -am "GH ACTION Headlines $(date)"
 
