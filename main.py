@@ -3,9 +3,10 @@ import pandas as pd
 from datetime import datetime, timezone, timedelta
 from scraper import create_scraper, fetch_calendar_page, send_post_request, parse_calendar_data
 from filter_data import clean_df, merge_dfs, drop_tentative, apply_timezones, add_datetime, filter_past_events, clean_date
-import requests
 from dotenv import load_dotenv
 import os
+import requests
+
 
 
 def get_current_year_month_day():
@@ -18,7 +19,7 @@ def get_current_year_month_day():
     # Get last day of the month
     end = str(calendar.monthrange(int(current_year), int(datetime.strptime(current_month, '%B').month))[1])
     return current_month, first, current_year, end
-    # print(current_year, current_month, today, first, end)
+    #print(current_year, current_month, today, first, end)
 
 def scrape_economic_data():
     scraper = create_scraper()
@@ -122,8 +123,8 @@ def process_data_rows(df, webhook_url):
 
 if __name__ == "__main__":
     # Usage
-    webhook_url = os.getenv('WEBHOOK_URL')
     load_dotenv()
+    webhook_url = os.getenv('WEBHOOK_URL')
     final_df = scrape_economic_data()
     process_data_rows(final_df, webhook_url)
     print(final_df)
