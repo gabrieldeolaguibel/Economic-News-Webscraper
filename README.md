@@ -1,5 +1,4 @@
 # Economic News Webscraper
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gabrieldeolaguibel/Economic-News-Webscraper/Python%20application)
 [![GitHub stars](https://img.shields.io/github/stars/gabrieldeolaguibel/Economic-News-Webscraper)](https://github.com/gabrieldeolaguibel/Economic-News-Webscraper/stargazers)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
