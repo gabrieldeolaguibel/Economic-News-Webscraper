@@ -35,6 +35,8 @@ jobs:
         name: Python Script Execution
         run: python main.py
         shell: bash
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
  # Add new files in folder, commit along with other modified files, push
       - id: commit
