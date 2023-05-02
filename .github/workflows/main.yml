@@ -22,6 +22,8 @@ jobs:
       - id: repo 
         name: Repo Checkout
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - id: python
         name: Python Setup & Packages Installation
@@ -46,10 +48,8 @@ jobs:
           git config --local user.email "actions@github.com"
           git add .
           git commit -am "GH ACTION Headlines $(date)"
-          git remote set-url origin "https://x-access-token:${{ secrets.ACTIONS_PUSH_TOKEN }}@github.com/${{ github.repository }}"
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push origin main
-
-
         env:
           REPO_KEY: ${{secrets.GITHUB_TOKEN}}
 
