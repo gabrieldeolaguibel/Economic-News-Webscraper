@@ -38,20 +38,17 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
-
 # Add new files in folder, commit along with other modified files, push
       - id: commit
         name: Commit files
-        run:
+        run: |
           git config --local user.name actions-user
-
           git config --local user.email "actions@github.com"
-
           git add .
-
           git commit -am "GH ACTION Headlines $(date)"
-
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push origin main
+
 
         env:
           REPO_KEY: ${{secrets.GITHUB_TOKEN}}
