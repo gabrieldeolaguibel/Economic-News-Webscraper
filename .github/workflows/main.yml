@@ -46,3 +46,4 @@ jobs:
           github_token: ${{ secrets.ACTIONS_PUSH_TOKEN }}
           branch: ${{ github.ref }}
           force: true
+          commit_options: "--all"
