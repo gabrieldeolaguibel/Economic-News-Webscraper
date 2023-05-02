@@ -35,15 +35,18 @@ jobs:
 
       - id: python_script
         name: Python Script Execution
-        run: python main.py
+        run: |
+          python main.py
+          cat message_history.txt
         shell: bash
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
       - name: Commit and push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ACTIONS_PUSH_TOKEN }}
-          branch: ${{ github.ref }}
-          force: true
-          commit_options: "--all"
+        run: |
+          git config --local user.name actions-user
+          git config --local user.email "actions@github.com"
+          git status
+          git add --all
+          git commit -m "GH ACTION Headlines $(date)"
+          git push origin main
