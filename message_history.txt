@@ -89,3 +89,7 @@ Date : Jun 22, Time : 13:00, Currency : GBP, Event : Official Bank Rate, Actual 
 Date : Jun 22, Time : 13:15, Currency : GBP, Event : BOE Gov Bailey Speaks, Actual : , Forecast : , Previous : , Effect : More hawkish than expected is good for market,  why_it_matters : As head of the central bank, which controls short term interest rates, he has more influence over the nation's currency value than any other person. Traders scrutinize his public engagements as they are often used to drop subtle clues regarding future monetary policy;
 Date : Jun 22, Time : 14:30, Currency : USD, Event : Unemployment Claims, Actual : 264K, Forecast : 261K, Previous : 264K, Effect : None,  why_it_matters : None
 Date : Jun 22, Time : 16:00, Currency : USD, Event : Fed Chair Powell Testifies, Actual : , Forecast : , Previous : , Effect : None,  why_it_matters : None
+Date : Jun 23, Time : 09:15, Currency : EUR, Event : French Flash Manufacturing PMI, Actual : 45.5, Forecast : 45.4, Previous : 45.7, Effect : None,  why_it_matters : None
+Date : Jun 23, Time : 09:15, Currency : EUR, Event : French Flash Services PMI, Actual : 48.0, Forecast : 52.2, Previous : 52.5, Effect : None,  why_it_matters : None
+Date : Jun 23, Time : 09:30, Currency : EUR, Event : German Flash Manufacturing PMI, Actual : 41.0, Forecast : 43.6, Previous : 43.2, Effect : None,  why_it_matters : None
+Date : Jun 23, Time : 09:30, Currency : EUR, Event : German Flash Services PMI, Actual : 54.1, Forecast : 56.3, Previous : 57.2, Effect : None,  why_it_matters : None
