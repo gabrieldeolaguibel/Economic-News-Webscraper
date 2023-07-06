@@ -21,6 +21,8 @@ def merge_dfs(df, df2):
 def drop_tentative(df):
     df.drop(labels=df[df['Time'] == 'Tentative'].index, inplace=True)
     df.drop(labels=df[df['Time'] == 'All Day'].index, inplace=True)
+    df.drop(labels=df[df['Time'].isin(['Day 1', 'Day 2'])].index, inplace=True)
+
     return df
 
 def convert_time(time_str, from_time_zone, to_time_zone):
