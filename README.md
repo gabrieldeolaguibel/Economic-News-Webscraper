@@ -88,7 +88,7 @@ If you have any questions, suggestions, or just want to get in touch, feel free 
 
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information
 
 
 
