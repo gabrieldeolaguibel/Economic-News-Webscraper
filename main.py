@@ -48,21 +48,16 @@ def scrape_economic_data():
 
     return df
 
-def save_message_data(message_data_array):
-    with open("message_history.txt", "w") as f:
-        for message in message_data_array:
-            f.write(message + "\n")
+def save_message_data(message_data_df):
+    message_data_df.to_csv("message_history.csv", mode='a', header=False, index=False)
 
 def load_message_data():
-    message_data_array = []
     try:
-        with open("message_history.txt", "r") as f:
-            for line in f:
-                message_data_array.append(line.strip())
+        message_data_df = pd.read_csv("message_history.csv", names=['Date', 'Time', 'Currency', 'Event', 'Actual', 'Forecast', 'Previous', 'Effect', 'why_it_matters'])
     except FileNotFoundError:
-        # If the file does not exist, return an empty array
-        pass
-    return message_data_array
+        # If the file does not exist, return an empty DataFrame
+        message_data_df = pd.DataFrame(columns=['Date', 'Time', 'Currency', 'Event', 'Actual', 'Forecast', 'Previous', 'Effect', 'why_it_matters'])
+    return message_data_df
 
 def send_to_slack(row, webhook_url):
     payload = {
@@ -112,13 +107,12 @@ def send_to_slack(row, webhook_url):
     requests.post(url=webhook_url, json=payload)
 
 def process_data_rows(df, webhook_url):
-    message_data_array = load_message_data()
+    message_data_df = load_message_data()
     for index, row in df.iterrows():
-        data_string = 'Date : {}, Time : {}, Currency : {}, Event : {}, Actual : {}, Forecast : {}, Previous : {}, Effect : {},  why_it_matters : {}'.format(row['Date'], row['Europe_time_military'], row['Currency'], row['Event'], row['Actual'], row['Forecast'], row['Previous'], row['Effect'], row['why_it_matters'])
-
-        if data_string not in message_data_array:
-            message_data_array.append(data_string)
-            save_message_data(message_data_array)
+        data_dict = {'Date': row['Date'], 'Time': row['Europe_time_military'], 'Currency': row['Currency'], 'Event': row['Event'], 'Actual': row['Actual'], 'Forecast': row['Forecast'], 'Previous': row['Previous'], 'Effect': row['Effect'], 'why_it_matters': row['why_it_matters']}
+        if not ((message_data_df == data_dict).all(axis=1)).any():
+            message_data_df = message_data_df.append(data_dict, ignore_index=True)
+            save_message_data(message_data_df)
             send_to_slack(row, webhook_url)
 
 if __name__ == "__main__":
