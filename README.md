@@ -16,7 +16,7 @@
 
 
 ## Overview
-This Economic News Webscraper is an open-source project designed to improve the efficiency of delivering high-impact macroeconomic news from the US, UK, and EU regions. Developed by myslef, a quantitative analyst at EDEN Fund (school endowment fund), this project automatically scrapes news events every 30 minutes, filters relevant information, and sends notifications via Slack.
+This Economic News Webscraper is an open-source project designed to improve the efficiency of delivering high-impact macroeconomic news from the US, UK, and EU regions. Developed by myself, a quantitative analyst at EDEN Fund (school endowment fund), this project automatically scrapes news events every 30 minutes, filters relevant information, and sends notifications via Slack.
 
 The project utilizes a Python script that scrapes news websites, and a GitHub Action to schedule and automate the process. The GitHub Action runs the script, commits any changes to the message history file, and pushes them to the repository. This ensures that the project continuously delivers the latest news without manual intervention.
 
@@ -69,12 +69,12 @@ Contributions are welcome! To contribute to this project:
 
 ## Future Improvements
 
-While this project already provides a valuable service, there are plans to further enhance and expand its capabilities. Some of the ambitious future improvements include:
+While this project already provides a valuable service, there are plans to enhance further and expand its capabilities. Some of the ambitious future improvements include:
 
 1. Utilizing AI and natural language processing (NLP) to better understand and interpret news articles, resulting in more accurate and relevant notifications.
 2. Expanding the scope of the project to include additional news sources and markets for a broader range of economic news coverage.
 3. Implementing a sentiment analysis module to gauge market sentiment and predict potential market reactions to news events.
-4. Developing a user interface (UI) to allow users to customize the types of news they receive, such as choosing specific regions, sources, or keywords.
+4. Develop a user interface (UI) to allow users to customize the types of news they receive, such as choosing specific regions, sources, or keywords.
 5. Integrating the project with various trading platforms to enable automated trading based on the news events and analysis provided.
 6. Providing a summary and visualization of past news events and market reactions to enable users to identify trends and patterns over time.
 
@@ -83,7 +83,7 @@ Stay tuned for these exciting developments and more as the project evolves!
 
 ## Contact
 
-If you have any questions, suggestions, or just want to get in touch, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/gabrieldeolaguibel/).
+If you have any questions, or suggestions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/gabrieldeolaguibel/).
 
 
 
